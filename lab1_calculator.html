@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+      <title>Calculator - JavaScript</title>
+      <!--Calculator using JavaScript-->
+      <script>
+         function calc()
+         {
+             var n1 = Number(document.getElementById('n1').value);
+             var n2 = Number(document.getElementById('n2').value);
+             var oper = document.getElementById('operators').value;
+             
+             if(oper === '+')
+             {
+                 document.getElementById('result').value = Number(n1+n2);
+             }
+             
+             if(oper === '-')
+             {
+                 document.getElementById('result').value = Number(n1-n2);
+             }
+         
+             if(oper === '*')
+             {
+                 document.getElementById('result').value = Number(n1*n2);
+             }
+         
+             if(oper === '/')
+             {
+                 document.getElementById('result').value = Number(n1/n2);
+             }
+             
+            
+         }
+         
+      </script>
+   </head>
+   <body>
+      <div class="container p-3">
+         <div class="row">
+            <div class="col-md-4 offset-md-4">
+               <div class="form-group">
+                  <label for="n1">Enter first number:</label>
+                  <input type="text" id="n1" autofocus>
+               </div>
+               <div class="form-group">
+                  <label for="n2">Enter second number:</label>
+                  <input type="text" id="n2">
+               </div>
+               <div class="form-group">
+                  <select id="operators" class = "btn btn-secondary">
+                     <option value="+">+</option>
+                     <option value="-">-</option>
+                     <option value="*">*</option>
+                     <option value="/">/</option>
+                  </select>
+               </div>
+               <button onclick="calc();" class = "btn btn-info">Result</button>
+               <input type="text" id="result" class="btn btn-danger">
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
